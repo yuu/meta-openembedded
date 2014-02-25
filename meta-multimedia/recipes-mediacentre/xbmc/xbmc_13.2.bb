@@ -59,6 +59,7 @@ EXTRA_OECONF_append_armv4 = " --with-platform=novfpnoneon "
 EXTRA_OECONF_append_armv5 = " --with-platform=novfpnoneon "
 
 EXTRA_OECONF_append = " \
+    --disable-rxsx \
     --enable-external-libraries \
     --with-arch=${TARGET_ARCH} \
     "
