@@ -5,6 +5,8 @@ DEPENDS = "libvpx libdvdread libtheora virtual/libsdl ffmpeg xsp zlib \
            libpng jpeg liba52 freetype fontconfig alsa-lib lzo ncurses \
            libxv virtual/libx11 libass speex faad2"
 
+inherit python3native
+
 RDEPENDS_${PN} = "mplayer-common"
 PROVIDES = "mplayer"
 RPROVIDES_${PN} = "mplayer"
