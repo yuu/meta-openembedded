@@ -1,0 +1,29 @@
+From 72b8eacc2985f054cadc5d0b48351a658998b8d6 Mon Sep 17 00:00:00 2001
+From: Yao Zhao <yao.zhao@windriver.com>
+Date: Wed, 30 Jul 2014 16:02:14 -0400
+Subject: [PATCH] linux-dpdk: remove unnecessary include path
+
+for dpdk include/arch and include/exec-env is only included
+by generic rte_xxx.h header, can't be included directly.
+
+Signed-off-by: Yao Zhao <yao.zhao@windriver.com>
+---
+ platform/linux-dpdk/Makefile.am | 2 --
+ 1 file changed, 2 deletions(-)
+
+diff --git a/platform/linux-dpdk/Makefile.am b/platform/linux-dpdk/Makefile.am
+index 4aa568f..dfcaadb 100644
+--- a/platform/linux-dpdk/Makefile.am
++++ b/platform/linux-dpdk/Makefile.am
+@@ -12,8 +12,6 @@ PLAT_CFLAGS  = -msse4.2
+ if SDK_INSTALL_PATH_
+ PLAT_CFLAGS += -include $(SDK_INSTALL_PATH)/include/rte_config.h
+ PLAT_CFLAGS += -I$(SDK_INSTALL_PATH)/include
+-PLAT_CFLAGS += -I$(SDK_INSTALL_PATH)/include/arch
+-PLAT_CFLAGS += -I$(SDK_INSTALL_PATH)/include/exec-env
+ 
+ AM_LDFLAGS  += -L$(SDK_INSTALL_PATH)/lib
+ endif
+-- 
+1.9.1
+
