@@ -1,0 +1,25 @@
+--- src/Makefile.am.orig	2014-08-30 11:49:01.893118629 -0700
++++ src/Makefile.am	2014-08-30 11:49:09.201116496 -0700
+@@ -12,13 +12,13 @@
+ 	-include $(CONFIG_HEADER) \
+ 	$(NULL)
+ 
+-BUILT_SOURCES = src/.stamp
++BUILT_SOURCES = $(srcdir)/src/.stamp
+ 
+ bin_PROGRAMS = vala-terminal
+ 
+ vala_terminal_VALASOURCES = \
+-	src/terminal.vala \
+-	src/mainwindow.vala \
++	$(srcdir)/src/terminal.vala \
++	$(srcdir)/src/mainwindow.vala \
+ 	$(NULL)
+ 
+ vala_terminal_SOURCES = \
+@@ -54,4 +54,4 @@
+                        intltool-extract \
+                        intltool-merge \
+                        intltool-update \
+-                       mkinstalldirs src/*.c
++                       mkinstalldirs $(srcdir)/src/*.c
