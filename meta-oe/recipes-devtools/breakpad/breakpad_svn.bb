@@ -56,6 +56,9 @@ do_install_append() {
 
         install -d ${D}${includedir}/breakpad/third_party/lss
         install -m 0644 ${S}/src/third_party/lss/linux_syscall_support.h ${D}${includedir}/breakpad/third_party/lss/linux_syscall_support.h
+
+        install -d ${D}${libdir}
+        install -m 0644 ${S}/src/client/linux/libbreakpad_client.a ${D}${libdir}/libbreakpad_client.a
 }
 
 PACKAGES =+ "${PN}-minidump-upload ${PN}-sym-upload"
