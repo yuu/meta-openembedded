@@ -8,7 +8,8 @@ RDEPENDS_${PN} = "vpnc"
 PV = "7.06"
 
 SRCREV = "35542d52202672b8c12ecc63867432128244013a"
-SRC_URI = "git://git.infradead.org/users/dwmw2/openconnect.git"
+SRC_URI = "git://git.infradead.org/users/dwmw2/openconnect.git \
+           file://0001-Makefile.am-add-missing-dependency.patch"
 
 S = "${WORKDIR}/git"
 

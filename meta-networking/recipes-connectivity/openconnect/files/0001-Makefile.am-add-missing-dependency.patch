@@ -1,0 +1,28 @@
+Upstream-Status: Pending
+
+Subject: Makefile.am: add missing dependency
+
+Add missing dependency to avoid the following error.
+
+  ../git/main.c:78:21: fatal error: version.c: No such file or directory
+
+Signed-off-by: Chen Qi <Qi.Chen@windriver.com>
+---
+ Makefile.am | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/Makefile.am b/Makefile.am
+index d823e01..ea48ec1 100644
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -112,6 +112,7 @@ EXTRA_DIST += $(shell cd "$(top_srcdir)" && \
+ 
+ DISTCLEANFILES = $(pkgconfig_DATA)
+ 
++main.c: version.c
+ main.o: version.c
+ version.c: $(library_srcs) $(lib_openssl_srcs) $(lib_gnutls_srcs) \
+ 	   $(openconnect_SOURCES) Makefile.am configure.ac \
+-- 
+2.8.1
+
