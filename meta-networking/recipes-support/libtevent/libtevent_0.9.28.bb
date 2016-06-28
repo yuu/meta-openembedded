@@ -3,7 +3,7 @@ HOMEPAGE = "http://tevent.samba.org"
 SECTION = "libs"
 LICENSE = "LGPLv3+"
 
-DEPENDS += "libaio libbsd libtalloc"
+DEPENDS += "libaio libbsd libtalloc libcap"
 RDEPENDS_python-tevent = "python"
 
 SRC_URI = "http://samba.org/ftp/tevent/tevent-${PV}.tar.gz"
