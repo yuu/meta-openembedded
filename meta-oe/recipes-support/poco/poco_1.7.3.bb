@@ -17,8 +17,8 @@ SRC_URI = " \
     file://run-ptest \
    "
 
-SRC_URI[md5sum] = "a4b755d47303b20a0e2586f281d05a36"
-SRC_URI[sha256sum] = "6dbbc2018912ad9af6af96f605933ed91354a1e7423e5dbd04d8e9a2b2d15c05"
+SRC_URI[md5sum] = "6b979d7d9c1751c2e063338cb5ea8977"
+SRC_URI[sha256sum] = "af75f279c9eac35b39fc998d8d20dc45d5bef91eb75851ff99d948ca128c7740"
 
 S = "${WORKDIR}/poco-poco-${PV}-release"
 
